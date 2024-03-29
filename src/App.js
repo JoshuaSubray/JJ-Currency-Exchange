@@ -1,17 +1,18 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Feedback from './Feedback';
-import Home from './Home';
-import Error from './Error';
+import Feedback from './components/Feedback';
+import Home from './components/Home';
+import Error from './components/Error';
 import {BrowserRouter as Router, Route, Routes, Link, BrowserRouter} from 'react-router-dom';
+import Converter from './components/Converter';
 const App = () => {
   return (
     <div>
       <Router>
         <div>
           <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/feedback'>Feedback</Link>
+            <Link to='/'>Home </Link>
+            <Link to='/feedback'>Feedback </Link>
           </nav>
         </div>
         <Routes>
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/feedback' element={ <Feedback />}></Route>
           <Route path='*' element={ <Error />}></Route>
         </Routes>
+        <Converter/>
       </Router>
     </div>
   )
