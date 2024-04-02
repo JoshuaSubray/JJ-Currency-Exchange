@@ -5,6 +5,10 @@ import Home from './components/Home';
 import Error from './components/Error';
 import {BrowserRouter as Router, Route, Routes, Link, BrowserRouter} from 'react-router-dom';
 import Converter from './components/Converter';
+import SignIn from './components/SignIn';
+import UserHome from './components/UserHome';
+import SignUp from './components/SignUp';
+import Contact from './components/Contact';
 const App = () => {
   return (
     <div>
@@ -12,15 +16,23 @@ const App = () => {
         <div>
           <nav>
             <Link to='/'>Home </Link>
+            <Link to='/converter'>Converter </Link>
             <Link to='/feedback'>Feedback </Link>
+            <Link to='/contact'>Contact </Link>
+            <Link to='/sign_in'>Sign in </Link>
+            <Link to='/sign_up'>Sign up </Link>
           </nav>
         </div>
         <Routes>
           <Route path='/' element={ <Home />}></Route>
           <Route path='/feedback' element={ <Feedback />}></Route>
+          <Route path='/converter' element={ <Converter />}></Route>
+          <Route path='/sign_in' element={ <SignIn />}></Route>
+          <Route path='/:User' element={ <UserHome />}></Route>
+          <Route path='/sign_up' element={ <SignUp />}></Route>
+          <Route path='/contact' element={ <Contact />}></Route>
           <Route path='*' element={ <Error />}></Route>
         </Routes>
-        <Converter/>
       </Router>
     </div>
   )

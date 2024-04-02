@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { SassColor } from "sass"
+
 const Feedback = () => {
     const [Name, setName] = useState('')
     const [Email, setEmail] = useState('')
@@ -7,15 +7,22 @@ const Feedback = () => {
     const [Msg, setMsg] = useState('')
     const Submit = (event) => {
         event.preventDefault()
-        console.log(Name);
-        console.log(Email);
-        console.log(Feedback);
-        setMsg("Thank you, your feedback has been received")
+        if(Email == ''){
+            alert("You must enter your email")
+            setMsg('')
+        }
+        if(Feedback == ''){
+            alert("Feedback field is empty")
+            setMsg('')
+        }
+        else{
+            setMsg("Thank you, your feedback has been received")
+        }
     }
     return(
         <div>
             <form>
-                <label>Enter your full name</label><br/>
+                <label>Enter your name (optional)</label><br/>
                 <input type="text" value={Name} onChange={(event) => {setName(event.target.value)}}></input><br/>
                 <label>Enter you email</label><br/>
                 <input type="text" value={Email} onChange={(event) => {setEmail(event.target.value)}}></input><br/>
