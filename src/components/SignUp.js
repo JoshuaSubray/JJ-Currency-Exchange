@@ -13,20 +13,36 @@ const SignUp = () => {
         event.preventDefault()
         if(Email == ''){
             alert('You must enter a valid email')
+            return
         }
-        if(Username == '' || Username.length < 3 || Username == ''){
-            alert("You must enter a valid username")
+        if(Username == '' || Username.length < 3){
+            if(Username.length == ''){
+                alert("You must enter a valid username")
+                return
+            }
+            else if(Username.length < 3){
+                alert("Username invalid. Please enter a username that is at least 3 characters long")
+                return
+            }
         }
-        if(Password == '' || Password.length < 7 || Password == ''){
-            alert("You must enter a valid password")
+        if(Password == '' || Password.length < 7){
+            if(Password == ''){
+                alert("You must enter a valid password")
+                return
+            }
+            else if(Password.length < 7){
+                alert("Password not secure. Please enter a Password that is at least 7 characters long")
+                return
+            }
         }
         else if(Password !== RePassword){
             alert('The password that you re_entered does not your original password')
+            return
         }
         else{
             setMsg('You have successfully made an account Returning you to the home page')
             setTimeout((User) => {
-                navigate(`/${Username}`)
+                navigate(`/user/${Username}`)
             }, 2000);
         }
     }
@@ -44,7 +60,7 @@ const SignUp = () => {
                 <label>Re-enter your password</label><br/>
                 <input type="password" value={RePassword} onChange={(event) => {setRePassword(event.target.value)}}></input><br/>
                 <button onClick={Submit}>Sign up</button><br/>
-                <p>{msg}</p>
+                <p style={{color: 'green'}}>{msg}</p>
             </form>
         </div>
     )

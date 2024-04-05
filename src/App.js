@@ -28,7 +28,7 @@ const App = () => {
           <Route path='/feedback' element={ <Feedback />}></Route>
           <Route path='/converter' element={ <Converter />}></Route>
           <Route path='/sign_in' element={ <SignIn />}></Route>
-          <Route path='/:User' element={ <UserHome />}></Route>
+          <Route path='/user/:User' element={ <UserHome />}></Route>
           <Route path='/sign_up' element={ <SignUp />}></Route>
           <Route path='/contact' element={ <Contact />}></Route>
           <Route path='*' element={ <Error />}></Route>

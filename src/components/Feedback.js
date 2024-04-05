@@ -29,7 +29,7 @@ const Feedback = () => {
                 <label>Enter your feedback</label><br/>
                 <input type="text" value={Feedback} onChange={(event) => {setFeedback(event.target.value)}}></input><br/>
                 <button onClick={Submit}>Submit</button><br/>
-                <p>{Msg}</p>
+                <p style={{color: 'green'}}>{Msg}</p>
             </form>
         </div>
     )

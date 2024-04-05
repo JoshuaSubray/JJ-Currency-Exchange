@@ -8,16 +8,18 @@ const SignIn = () => {
     const [msg, setMsg] = useState('')
     const Submit = (event) => {
         event.preventDefault()
-        if(Username == '' || Username.length < 3 || Username == ''){
-            alert("You must enter a valid username")
+        if(Username == '' || Username.length < 3){
+            alert("Username incorrect")
+            return
         }
-        if(Password == '' || Password.length < 7 || Password == ''){
-            alert("You must enter a valid password")
+        if(Password == '' || Password.length < 7){
+            alert("Password incorrect")
+            return
         }
         else{
             setMsg('You have successfully signed in Returning you to the home page')
             setTimeout((User) => {
-                navigate(`/${Username}`)
+                navigate(`/user/${Username}`)
             }, 2000);
         }
     }
@@ -29,7 +31,7 @@ const SignIn = () => {
                 <label>Password</label><br/>
                 <input type="password" value={Password} onChange={(event) => {setPassword(event.target.value)}}></input><br/>
                 <button onClick={Submit}>Sign in</button><br/>
-                <p>{msg}</p>
+                <p style={{color: 'green'}}>{msg}</p>
             </form>
         </div>
     )
