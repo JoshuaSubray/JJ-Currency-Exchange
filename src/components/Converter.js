@@ -1,59 +1,49 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
+// constructor of sorts. used in Selector.
+const Option = ({ value, label }) => (
+    <option value={value}>{label}</option>
+)
+
+// all options user can pick from. format is based off Option.
+const Selector = () => (
+    <select>
+        <option value="">Select Currency</option>
+        <Option value="SGD" label="SGD (Singapore Dollar)"/>
+        <Option value="SGD" label="SGD (Singapore Dollar)"/>
+        <Option value="MYR" label="MYR (Malaysian Ringgit)"/>
+        <Option value="EUR" label="EUR (Euro)"/>
+        <Option value="USD" label="USD (United States Dollar)"/>
+        <Option value="AUD" label="AUD (Australian Dollar)"/>
+        <Option value="JPY" label="JPY (Japanese Yen)"/>
+        <Option value="CNY" label="CNY (Chinese Yuan)"/>
+        <Option value="HKD" label="HKD (Hong Kong Dollar)"/>
+        <Option value="CAD" label="CAD (Canadian Dollar)"/>
+        <Option value="INR" label="INR (Indian Rupee)"/>
+        <Option value="DKK" label="DKK (Danish Krone)"/>
+        <Option value="GBP" label="GBP (Great Britain Pound)"/>
+        <Option value="RUB" label="RUB (Russian Ruble)"/>
+        <Option value="NZD" label="NZD (New Zealand Dollar)"/>
+        <Option value="MXN" label="MXN (Mexican Peso)"/>
+        <Option value="IDR" label="IDR (Indonesian Rupiah)"/>
+        <Option value="NTD" label="NTD (Taiwanese Dollar)"/>
+        <Option value="THB" label="THB (Thai Baht)"/>
+        <Option value="VND" label="VND (Vietnamese Dong)"/>
+    </select>
+)
+
+// UI for selecting currency.
 const Converter = () => {
     return (
         <div>
             <h3>Currency Converter</h3>
-            {/* fix currency names to be like this: Singapore Dollar (SGD) */}
-            <select>
-                <option value="">Select Currency</option>
-                <option value="Singapore Dollar">SGD</option>
-                <option value="Malaysian Ringgit">MYR</option>
-                <option value="Euro">EUR</option>
-                <option value="United States Dollar">USD</option>
-                <option value="Australian Dollar">AUD</option>
-                <option value="Japanese Yen">JPY</option>
-                <option value="Chinese Yuan">CNY</option>
-                <option value="Hong Kong Dollar">HKD</option>
-                <option value="Canadian Dollar">CAD</option>
-                <option value="Indian Rupee">INR</option>
-                <option value="Danish Krone">DKK</option>
-                <option value="Great Britain Pound">GBP</option>
-                <option value="Russian Ruble">RUB</option>
-                <option value="New Zealand Dollar">NZD</option>
-                <option value="Mexican Peso">MXN</option>
-                <option value="Indonesian Rupiah">IDR</option>
-                <option value="Taiwanese Dollar">NTD</option>
-                <option value="Thai Baht">THB</option>
-                <option value="Vietnamese Dong">VND</option>
-            </select>
+            <Selector/>
             <input
                 type="number"
                 placeholder="amount"/>
             <br/><br/>
-            <select>
-            <option value="">Select Currency</option>
-                <option value="Singapore Dollar">SGD</option>
-                <option value="Malaysian Ringgit">MYR</option>
-                <option value="Euro">EUR</option>
-                <option value="United States Dollar">USD</option>
-                <option value="Australian Dollar">AUD</option>
-                <option value="Japanese Yen">JPY</option>
-                <option value="Chinese Yuan">CNY</option>
-                <option value="Hong Kong Dollar">HKD</option>
-                <option value="Canadian Dollar">CAD</option>
-                <option value="Indian Rupee">INR</option>
-                <option value="Danish Krone">DKK</option>
-                <option value="Great Britain Pound">GBP</option>
-                <option value="Russian Ruble">RUB</option>
-                <option value="New Zealand Dollar">NZD</option>
-                <option value="Mexican Peso">MXN</option>
-                <option value="Indonesian Rupiah">IDR</option>
-                <option value="Taiwanese Dollar">NTD</option>
-                <option value="Thai Baht">THB</option>
-                <option value="Vietnamese Dong">VND</option>
-            </select>
+            <Selector/>
             <input
                 type="number"
                 placeholder="amount"/>
