@@ -34,9 +34,12 @@ const Selector = () => (
 
 // UI for selecting currency.
 const Converter = () => {
+    const date = new Date().toString(); // initializes the date and time to be later displayed.
+
     return (
         <div>
             <h3>Converter</h3>
+            <p>{date}</p>
             <Selector/>
             <input
                 type="number"
