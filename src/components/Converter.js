@@ -11,7 +11,6 @@ const Selector = () => (
     <select>
         <option value="">Select Currency</option>
         <Option value="SGD" label="SGD (Singapore Dollar)"/>
-        <Option value="SGD" label="SGD (Singapore Dollar)"/>
         <Option value="MYR" label="MYR (Malaysian Ringgit)"/>
         <Option value="EUR" label="EUR (Euro)"/>
         <Option value="USD" label="USD (United States Dollar)"/>
