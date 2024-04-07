@@ -9,11 +9,11 @@ const SignIn = () => {
     const Submit = (event) => {
         event.preventDefault()
         if(Username == '' || Username.length < 3){
-            alert("Username incorrect")
+            alert("Invalid username.")
             return
         }
         if(Password == '' || Password.length < 7){
-            alert("Password incorrect")
+            alert("Invalid password.")
             return
         }
         else{

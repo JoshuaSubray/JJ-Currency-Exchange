@@ -12,35 +12,35 @@ const SignUp = () => {
     const Submit = (event) => {
         event.preventDefault()
         if(Email == ''){
-            alert('You must enter a valid email')
+            alert('Invalid email.')
             return
         }
         if(Username == '' || Username.length < 3){
             if(Username.length == ''){
-                alert("You must enter a valid username")
+                alert("Invalid username.")
                 return
             }
             else if(Username.length < 3){
-                alert("Username invalid. Please enter a username that is at least 3 characters long")
+                alert("Invalid username. Please enter a username that is at least 3 characters long.")
                 return
             }
         }
         if(Password == '' || Password.length < 7){
             if(Password == ''){
-                alert("You must enter a valid password")
+                alert("Invalid password.")
                 return
             }
             else if(Password.length < 7){
-                alert("Password not secure. Please enter a Password that is at least 7 characters long")
+                alert("Password not secure. Please enter a Password that is at least 7 characters long.")
                 return
             }
         }
         else if(Password !== RePassword){
-            alert('The password that you re_entered does not your original password')
+            alert('Invalid re-entry. The password entered does not match original password.')
             return
         }
         else{
-            setMsg('You have successfully made an account Returning you to the home page')
+            setMsg('You have successfully created an account! Returning to home page.')
             setTimeout((User) => {
                 navigate(`/user/${Username}`)
             }, 2000);

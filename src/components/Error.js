@@ -4,10 +4,11 @@ const Error = () => {
     const GoHome = () => {
         navigate('/')
     }
+    
     return(
         <div>
-            <p>We were unable to find the webpage you were looking for</p>
-            <button onClick={GoHome}>Click to return home</button>
+            <h2>ERROR: The page you requested could not be found.</h2>
+            <button onClick={GoHome}>Return home.</button>
         </div>
     )
 }

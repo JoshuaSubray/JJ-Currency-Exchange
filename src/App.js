@@ -19,17 +19,17 @@ const App = () => {
             <Link to='/converter'>Converter </Link>
             <Link to='/feedback'>Feedback </Link>
             <Link to='/contact'>Contact </Link>
-            <Link to='/sign_in'>Sign in </Link>
-            <Link to='/sign_up'>Sign up </Link>
+            <Link to='/signin'>Sign in </Link>
+            <Link to='/signup'>Sign up </Link>
           </nav>
         </div>
         <Routes>
           <Route path='/' element={ <Home />}></Route>
           <Route path='/feedback' element={ <Feedback />}></Route>
           <Route path='/converter' element={ <Converter />}></Route>
-          <Route path='/sign_in' element={ <SignIn />}></Route>
+          <Route path='/signin' element={ <SignIn />}></Route>
           <Route path='/user/:User' element={ <UserHome />}></Route>
-          <Route path='/sign_up' element={ <SignUp />}></Route>
+          <Route path='/signup' element={ <SignUp />}></Route>
           <Route path='/contact' element={ <Contact />}></Route>
           <Route path='*' element={ <Error />}></Route>
         </Routes>
