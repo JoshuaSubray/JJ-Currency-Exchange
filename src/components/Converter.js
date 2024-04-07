@@ -36,7 +36,7 @@ const Selector = () => (
 const Converter = () => {
     return (
         <div>
-            <h3>Currency Converter</h3>
+            <h3>Converter</h3>
             <Selector/>
             <input
                 type="number"
