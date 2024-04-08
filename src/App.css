@@ -1,5 +1,24 @@
-.App, html {
+.App, html, body{
   text-align: center;
+  background-image: url(./assets/background.png);
+  background-size: 25%;
+  animation: pan 180s linear infinite;
+}
+/* image source: https://www.alamy.com/seamless-pattern-with-hand-drawn-dollar-sign-black-elements-on-white-background-vector-illustartion-image331793829.html */
+
+.header {
+  background-image: url(./assets/backgroundHeader.png);
+  background-size: 50%;
+  color: white;
+}
+/* header image source: https://www.etsy.com/ca/listing/1048584685/gold-money-seamless-digital-paper */
+
+.background {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+p, h2, h3, label {
+  color: white !important;
 }
 
 .App-logo {
@@ -34,5 +53,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pan {
+  0% {
+    transform: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 0%;
   }
 }

@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        <div>
+        <div className="header">
           <h1><b><u>CURRENCY CONVERTER</u></b></h1><br/>
             <nav>
               <Link to='/'>Home </Link>

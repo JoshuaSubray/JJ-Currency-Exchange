@@ -47,7 +47,7 @@ const SignUp = () => {
         }
     }
     return(
-        <div>
+        <div className="background">
             <form>
                 <label>Enter your name (optional)</label><br/>
                 <input type="text" value={Name} onChange={(event) => {setName(event.target.value)}}></input><br/>

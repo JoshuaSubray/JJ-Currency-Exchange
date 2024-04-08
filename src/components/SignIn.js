@@ -24,7 +24,7 @@ const SignIn = () => {
         }
     }
     return(
-        <div>
+        <div className="background">
             <form>
                 <label>Username</label><br/>
                 <input type="text" value={Username} onChange={(event) => {setUsername(event.target.value)}}></input><br/>

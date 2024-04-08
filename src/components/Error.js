@@ -6,7 +6,7 @@ const Error = () => {
     }
     
     return(
-        <div>
+        <div className="background">
             <h2>ERROR: The page you requested could not be found.</h2>
             <button onClick={GoHome}>Return home.</button>
         </div>
