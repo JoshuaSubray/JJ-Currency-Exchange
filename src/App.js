@@ -1,14 +1,16 @@
 // import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Feedback from './components/Feedback';
 import Home from './components/Home';
 import Error from './components/Error';
 import {BrowserRouter as Router, Route, Routes, Link, BrowserRouter} from 'react-router-dom';
-import Converter from './components/Converter';
+// import Converter from './components/Converter';
 import SignIn from './components/SignIn';
 import UserHome from './components/UserHome';
 import SignUp from './components/SignUp';
 import Contact from './components/Contact';
+
 const App = () => {
   return (
     <div>

@@ -1,57 +1,42 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import ExchangeRates from "./ExchangeRates.json" // problems with obtaining API data. had to download it to a JSON and use it locally. kept on receiving HTTP 403 and/or 429.
 
-// sets up the base format for Selector.
+// format for currencies to appear in the drop down menu.
 const Option = ({ value, label }) => (
     <option value={value}>{label}</option>
-)
-
-// all options user can pick from. format is based off Option.
-const Selector = ({ currencies, onChange }) => (
-    <select onChange={onChange}>
-      <option value="">Select Currency</option>
-      {currencies.map((currency, index) => (
-        <Option key={index} value={currency} label={`${currency} (${currency})`} />
-      ))}
-    </select>
 )
 
 // UI for selecting currency.
 const Converter = () => {
     const date = new Date().toString(); // initializes the date and time to be later displayed.
     const [exchangeRate, setExchangeRate] = useState(null)
-    const [currencies, setCurrencies] = useState([])
-    const [fromCurrency, setFromCurrency] = useState("USD")
-    const [toCurrency, setToCurrency] = useState("EUR")
+    const [fromCurrency, setFromCurrency] = useState("")
+    const [toCurrency, setToCurrency] = useState("")
 
     useEffect(() => {
-        const fetchRates = async () => {
-            const options = {
-                method: "GET",
-                url: "https://currency-exchange.p.rapidapi.com/listquotes",
-                headers: {
-                    "X-RapidAPI-Key": "bdfe3bda68msh3027425b6f0a1e1p1d60cfjsn33b00a3ba96c",
-                    'X-RapidAPI-Host': "currency-exchange.p.rapidapi.com"
+        const calculateExchangeRate = () => {
+            if (fromCurrency && toCurrency) {
+                const fromRate = ExchangeRates.conversion_rates[fromCurrency]
+                const toRate = ExchangeRates.conversion_rates[toCurrency]
+                if (fromRate && toRate) {
+                    const rate = (toRate / fromRate).toFixed(2)
+                    setExchangeRate(rate)
+                } else {
+                    setExchangeRate(null)
                 }
-            }
-
-            try {
-                const response = await axios.request(options);
-                console.log(response.data)
-            } catch (error) {
-                console.error(error)
+            } else {
+                setExchangeRate(null)
             }
         }
 
-        fetchRates()
+        calculateExchangeRate()
     }, [fromCurrency, toCurrency])
 
-    // handles FromCurrencyChange.
     const handleFromCurrencyChange = (e) => {
         setFromCurrency(e.target.value)
     }
 
-    // handles ToCurrencyChange.
     const handleToCurrencyChange = (e) => {
         setToCurrency(e.target.value)
     }
@@ -60,12 +45,23 @@ const Converter = () => {
         <div>
             <h3>Converter</h3>
             <p>{date}</p>
-            <p>Exchange Rate: {exchangeRate}</p>
-            <Selector currencies={currencies} onChange={handleFromCurrencyChange} />
-            <input type="number" placeholder="amount" />
+            <input type="number" placeholder="Enter currency."/>
             <br/><br/>
-            <Selector currencies={currencies} onChange={handleToCurrencyChange} />
-            <input type="number" placeholder="amount" />
+            <select onChange={handleFromCurrencyChange}>
+                <option value="">From Currency</option>
+                {Object.keys(ExchangeRates.conversion_rates).map((currency, index) => (
+                    <Option key={index} value={currency} label={currency}/>
+                ))}
+            </select>
+            <span style={{marginLeft: "32px"}}></span>
+            <select onChange={handleToCurrencyChange}>
+                <option value="">To Currency</option>
+                {Object.keys(ExchangeRates.conversion_rates).map((currency, index) => (
+                    <Option key={index} value={currency} label={currency}/>
+                ))}
+            </select>
+            <br/><br/>
+            <p>Exchange Rate: $<b>{exchangeRate}</b></p>
         </div>
     )
 }

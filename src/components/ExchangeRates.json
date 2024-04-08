@@ -1,0 +1,32 @@
+{
+    "result": "success",
+    "documentation": "https://www.exchangerate-api.com/docs",
+    "terms_of_use": "https://www.exchangerate-api.com/terms",
+    "time_last_update_unix": 1712534401,
+    "time_last_update_utc": "Mon, 08 Apr 2024 00:00:01 +0000",
+    "time_next_update_unix": 1712620801,
+    "time_next_update_utc": "Tue, 09 Apr 2024 00:00:01 +0000",
+    "base_code": "USD",
+    "conversion_rates": {
+      "SGD": 1.3491,
+      "MYR": 4.7469,
+      "EUR": 0.9232,
+      "USD": 1,
+      "AUD": 1.6639,
+      "JPY": 151.647,
+      "CNY": 7.245,
+      "HKD": 7.829,
+      "CAD": 1.3595,
+      "INR": 83.3457,
+      "DKK": 6.8861,
+      "GBP": 0.7923,
+      "RUB": 92.5063,
+      "NZD": 1.6639,
+      "MXN": 16.4679,
+      "IDR": 15871.382,
+      "NTD": 32.1107,
+      "THB": 36.6458,
+      "VND": 24968.2083
+    }
+  }
+  
