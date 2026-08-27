@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/JJ-Currency-Exchange/static/css/main.7390498f.css",
+    "main.js": "/JJ-Currency-Exchange/static/js/main.12c325b2.js",
+    "static/js/453.4070744d.chunk.js": "/JJ-Currency-Exchange/static/js/453.4070744d.chunk.js",
+    "static/media/background.png": "/JJ-Currency-Exchange/static/media/background.a49488948dd4befe3fa8.png",
+    "static/media/backgroundHeader.png": "/JJ-Currency-Exchange/static/media/backgroundHeader.f66088b8181067ef666a.png",
+    "index.html": "/JJ-Currency-Exchange/index.html",
+    "main.7390498f.css.map": "/JJ-Currency-Exchange/static/css/main.7390498f.css.map",
+    "main.12c325b2.js.map": "/JJ-Currency-Exchange/static/js/main.12c325b2.js.map",
+    "453.4070744d.chunk.js.map": "/JJ-Currency-Exchange/static/js/453.4070744d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7390498f.css",
+    "static/js/main.12c325b2.js"
+  ]
+}
