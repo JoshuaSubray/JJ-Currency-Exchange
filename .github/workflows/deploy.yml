@@ -5,7 +5,7 @@ on:
     branches:
       - main
   workflow_dispatch:
- deployment to GitHub Pages
+
 permissions:
   contents: read
   pages: write
