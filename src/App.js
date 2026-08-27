@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Feedback from './components/Feedback';
 import Home from './components/Home';
 import Error from './components/Error';
-import {BrowserRouter as Router, Route, Routes, Link, BrowserRouter} from 'react-router-dom';
+import {HashRouter as Router, Route, Routes, Link} from 'react-router-dom';
 // import Converter from './components/Converter';
 import SignIn from './components/SignIn';
 import UserHome from './components/UserHome';
